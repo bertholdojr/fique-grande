@@ -1,0 +1,369 @@
+/* Estilos Globais e Reset Básico */
+body {
+    font-family: 'Inter', Arial, sans-serif; /* Preferência para Inter, se disponível */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Melhorar legibilidade */
+    -webkit-font-smoothing: antialiased; /* Suavização de fonte para WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Suavização de fonte para Firefox */
+}
+
+/* Container principal para centralizar e limitar largura */
+main {
+    padding: 20px;
+    max-width: 900px; /* Aumenta um pouco para desktops maiores */
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra mais suave */
+}
+
+/* Header (Cabeçalho) */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1.5rem 0; /* Mais espaçamento */
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+header h1 {
+    margin-bottom: 15px;
+    font-size: 2.2rem; /* Tamanho da fonte maior para o título principal */
+}
+
+/* Seletor de Usuário (Preto/Preta) */
+.user-selector {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Mais espaço entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem linha em telas pequenas */
+}
+
+.user-selector span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.user-button {
+    background-color: #5cb85c; /* Tom de verde mais claro */
+    color: white;
+    border: none;
+    padding: 12px 25px; /* Aumentado para melhor toque em mobile */
+    border-radius: 8px; /* Cantos mais arredondados */
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona transição de transformação */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para botões */
+}
+
+.user-button:hover {
+    background-color: #449d44; /* Tom de verde mais escuro no hover */
+    transform: translateY(-2px); /* Efeito sutil de "levantar" */
+}
+
+.user-button.active {
+    background-color: #368236; /* Cor mais escura para o botão ativo */
+    border: 2px solid #aaffaa; /* Borda destacada para o ativo */
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3) inset; /* Sombra interna para o ativo */
+}
+
+#current-user-display {
+    font-weight: bold;
+    margin-left: 15px;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+}
+
+/* Seções Principais (Treino do Dia, Refeições) */
+section {
+    margin-bottom: 40px; /* Mais espaçamento entre seções */
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none; /* Remove a borda da última seção */
+}
+
+h2, h3 {
+    color: #4CAF50; /* Cor primária verde */
+    border-bottom: 2px solid #e0e0e0; /* Borda cinza suave */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Estilo de Botões e Links */
+button, .button-link {
+    background-color: #007bff; /* Azul padrão */
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Aumentado para melhor toque */
+    border-radius: 8px; /* Cantos arredondados */
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none; /* Para links com estilo de botão */
+    display: inline-block; /* Para links com estilo de botão */
+    margin-right: 10px;
+    margin-top: 10px; /* Garante algum espaçamento acima */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover, .button-link:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Seção de Refeições */
+.refeicoes-do-dia ul {
+    list-style: none;
+    padding: 0;
+}
+
+.refeicoes-do-dia li {
+    background-color: #e9f7ed; /* Fundo suave para os itens */
+    border: 1px solid #d4edda;
+    padding: 15px; /* Mais padding */
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre linha */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 1.05rem;
+}
+
+.refeicoes-do-dia li span {
+    flex-grow: 1; /* Permite que o texto da refeição ocupe o espaço disponível */
+    margin-right: 10px; /* Espaço entre texto e botão */
+    word-break: break-word; /* Garante que palavras longas quebrem */
+}
+
+.refeicoes-do-dia li button {
+    background-color: #dc3545; /* Vermelho para exclusão */
+    padding: 8px 15px; /* Ajuste para botões menores dentro da lista */
+    font-size: 0.9rem;
+    margin-top: 0; /* Remove margem extra */
+    box-shadow: none; /* Botões menores sem sombra */
+}
+
+.refeicoes-do-dia li button:hover {
+    background-color: #c82333;
+    transform: none; /* Sem efeito de levantar para este botão */
+}
+
+/* Formulário de Adicionar Refeição */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Mais espaço entre os campos do formulário */
+    margin-top: 25px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 1rem;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    padding: 10px; /* Aumentado para melhor toque */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%; /* Garante que ocupem a largura total */
+    box-sizing: border-box; /* Inclui padding e border na largura */
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+/* Seção de Detalhes do Treino (treino.html) */
+.treino-detalhes {
+    text-align: center;
+}
+
+.treino-detalhes .exercicio {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 20px; /* Mais padding */
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.treino-detalhes .exercicio h2 {
+    color: #333;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.treino-detalhes .exercicio img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.treino-detalhes .exercicio p {
+    margin: 8px 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.back-button {
+    margin-top: 30px;
+    margin-bottom: 20px; /* Espaçamento extra no final */
+    display: block;
+    text-align: center;
+}
+
+/* ========================================= */
+/* Media Queries para Responsividade */
+/* Ajustes para telas menores (smartphones) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .user-selector {
+        flex-direction: column; /* Botões em coluna em telas menores */
+        gap: 10px;
+    }
+
+    .user-button {
+        width: 80%; /* Botões de usuário ocupam mais largura */
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    #current-user-display {
+        font-size: 1rem;
+        margin-left: 0; /* Centraliza */
+        margin-top: 10px;
+    }
+
+    main {
+        margin: 15px; /* Margem menor nas laterais */
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    h2, h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    button, .button-link {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        margin-right: 5px; /* Menos margem entre botões */
+    }
+
+    .refeicoes-do-dia li {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .refeicoes-do-dia li button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    form input, form textarea, form select {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .treino-detalhes .exercicio {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    .treino-detalhes .exercicio h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Ajustes para telas ainda menores (celulares pequenos) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .user-button {
+        width: 90%; /* Quase largura total */
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    h2, h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    button, .button-link {
+        display: block; /* Botões em blocos separados para facilitar o clique */
+        width: calc(100% - 20px); /* Ocupa a largura total menos padding */
+        margin: 10px auto; /* Centraliza */
+    }
+
+    .refeicoes-do-dia li {
+        flex-direction: column; /* Conteúdo da refeição em coluna */
+        align-items: flex-start; /* Alinha texto à esquerda */
+        gap: 5px; /* Espaço entre texto e botão */
+        font-size: 0.85rem;
+    }
+
+    .refeicoes-do-dia li span {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .refeicoes-do-dia li button {
+        width: 100%; /* Botão excluir ocupa toda a largura do item */
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .treino-detalhes .exercicio h2 {
+        font-size: 1.2rem;
+    }
+    .treino-detalhes .exercicio p {
+        font-size: 0.9rem;
+    }
+}

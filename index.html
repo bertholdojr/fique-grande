@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Treino & Refeições</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Diário de Treino & Refeições</h1>
+        <div class="user-selector">
+            <span>Eu sou:</span>
+            <button id="btn-preto" class="user-button">Preto</button>
+            <button id="btn-preta" class="user-button">Preta</button>
+            <span id="current-user-display">Usuário Atual: Preto</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="treino-do-dia">
+            <!-- ADICIONE O ID "treino-do-dia-titulo" AQUI -->
+            <h2 id="treino-do-dia-titulo">Treino do Dia</h2> 
+            <p id="status-treino"></p>
+            <button id="btn-concluir-treino">Concluí o Treino de Hoje</button>
+            <a href="treino.html" class="button-link">Ver Detalhes do Treino</a>
+        </section>
+
+        <section class="refeicoes-do-dia">
+            <h2>Minhas Refeições de Hoje</h2>
+            <div id="lista-refeicoes">
+                <!-- Refeições serão carregadas aqui pelo JS -->
+            </div>
+
+            <h3>Adicionar Nova Refeição</h3>
+            <form id="form-adicionar-refeicao">
+                <label for="tipo-refeicao">Tipo de Refeição:</label>
+                <select id="tipo-refeicao" required>
+                    <option value="Cafe da Manha">Café da Manhã</option>
+                    <option value="Lanche da Manha">Lanche da Manhã</option>
+                    <option value="Almoco">Almoço</option>
+                    <option value="Lanche da Tarde">Lanche da Tarde</option>
+                    <option value="Jantar">Jantar</option>
+                    <option value="Ceia">Ceia</option>
+                </select>
+
+                <label for="descricao-refeicao">Descrição:</label>
+                <textarea id="descricao-refeicao" rows="3" placeholder="Ex: Ovos mexidos com abacate, café" required></textarea>
+
+                <button type="submit">Adicionar Refeição</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
